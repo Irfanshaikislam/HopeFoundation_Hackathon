@@ -83,21 +83,22 @@ Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - Internet connection (for CDN resources)
 Installation
-1. 1.
-   Clone the repository:
+1. 1.Clone the repository:
    
    
    git clone [https://github.com/](https://github.com/Irfanshaikislam/HopeFoundation_Hackathon)
    yourusername/hope-foundation.git
    
-2. 2.
-   Navigate to the project directory:
+2.
+
+  2.Navigate to the project directory:
    
    
    cd hope-foundation
    
-3. 3.
-   Open index.html in your browser or use a local development server.
+4.
+
+  3.Open index.html in your browser or use a local development server.
 💡 Usage
 - Home Page : Learn about the foundation and its impact
 - Our Mission : Explore the foundation's mission and vision
@@ -112,16 +113,11 @@ The application uses browser local storage to:
 
   🤝 Contributing
   --------------------------
-1. 1.
-   Fork the repository
-2. 2.
-   Create your feature branch ( git checkout -b feature/amazing-feature )
-3. 3.
-   Commit your changes ( git commit -m 'Add some amazing feature' )
-4. 4.
-   Push to the branch ( git push origin feature/amazing-feature )
-5. 5.
-   Open a Pull Request
+1. 1.Fork the repository
+2. 2.Create your feature branch ( git checkout -b feature/amazing-feature )
+3. 3.Commit your changes ( git commit -m 'Add some amazing feature' )
+4. 4.Push to the branch ( git push origin feature/amazing-feature )
+5. 5.Open a Pull Request
 
 📄 License
 -------------------
