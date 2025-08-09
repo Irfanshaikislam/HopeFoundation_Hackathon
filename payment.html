@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Hope Foundation</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="icon" href="./images/icon.svg">
+    <!-- Stripe JS -->
+    <script src="https://js.stripe.com/v3/" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg nav-bar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-hands-helping me-2"></i>Hope Foundation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aim.html">Our Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment.html">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="payment-hero-section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-8 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="display-4 fw-bold text-white">Make a Donation</h1>
+                    <p class="lead text-white">Your contribution can change lives and create a better future for those in need</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Donation Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card donation-card shadow" data-aos="fade-up">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="card-title text-center mb-4">Your Donation Details</h2>
+                            <form id="donationForm">
+                                <div class="row g-3">
+                                    <!-- Personal Information -->
+                                    <div class="col-12">
+                                        <h4 class="form-section-title">Personal Information</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name*</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name*</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address*</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number*</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="address" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="address">
+                                    </div>
+
+                                    <!-- Donation Details -->
+                                    <div class="col-12 mt-4">
+                                        <h4 class="form-section-title">Donation Details</h4>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="donationCause" class="form-label">Select Cause*</label>
+                                        <select class="form-select" id="donationCause" required>
+                                            <option value="" selected disabled>Choose a cause...</option>
+                                            <option value="Education For All">Education For All</option>
+                                            <option value="Clean Water Initiative">Clean Water Initiative</option>
+                                            <option value="Hunger Relief Program">Hunger Relief Program</option>
+                                            <option value="Healthcare Access">Healthcare Access</option>
+                                            <option value="General Fund">General Fund</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Donation Amount*</label>
+                                        <div class="donation-amount-options">
+                                            <div class="form-check form-check-inline amount-option">
+                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount100" value="100">
+                                                <label class="form-check-label" for="amount100">₹100</label>
+                                            </div>
+                                            <div class="form-check form-check-inline amount-option">
+                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount500" value="500">
+                                                <label class="form-check-label" for="amount500">₹500</label>
+                                            </div>
+                                            <div class="form-check form-check-inline amount-option">
+                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount1000" value="1000">
+                                                <label class="form-check-label" for="amount1000">₹1,000</label>
+                                            </div>
+                                            <div class="form-check form-check-inline amount-option">
+                                                <input class="form-check-input" type="radio" name="donationAmount" id="amount5000" value="5000">
+                                                <label class="form-check-label" for="amount5000">₹5,000</label>
+                                            </div>
+                                            <div class="form-check form-check-inline amount-option">
+                                                <input class="form-check-input" type="radio" name="donationAmount" id="amountCustom" value="custom">
+                                                <label class="form-check-label" for="amountCustom">Custom</label>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3 custom-amount-container d-none">
+                                            <label for="customAmount" class="form-label">Enter Custom Amount (₹)</label>
+                                            <input type="number" class="form-control" id="customAmount" min="1">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="donationFrequency" class="form-label">Donation Frequency</label>
+                                        <select class="form-select" id="donationFrequency">
+                                            <option value="one-time" selected>One-time Donation</option>
+                                            <option value="monthly">Monthly Donation</option>
+                                            <option value="quarterly">Quarterly Donation</option>
+                                            <option value="annually">Annual Donation</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Message (Optional)</label>
+                                        <textarea class="form-control" id="message" rows="3" placeholder="Share why you're donating or any special instructions"></textarea>
+                                    </div>
+
+                                    <!-- Card Element Container -->
+                                    <div class="col-12 mt-3">
+                                        <label class="form-label">Card Details</label>
+                                        <div id="card-element" class="form-control" style="height: 40px; padding: 10px;"></div>
+                                        <div id="card-errors" class="text-danger mt-2" style="min-height: 20px;"></div>
+                                    </div>
+                                    
+                                    <!-- Payment Button -->
+                                    <div class="col-12 mt-4 text-center">
+                                        <button type="button" id="stripe-button" class="btn btn-grad px-5 py-3">
+                                            <i class="fas fa-heart me-2"></i>Donate Now
+                                        </button>
+                                        <div class="mt-3 text-muted">
+                                            <small><i class="fas fa-lock me-1"></i> Secure payment powered by Stripe</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2>Your Donation Makes a Difference</h2>
+                    <p class="lead">See how your contribution can create real impact</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card impact-card h-100">
+                        <img src="https://www.shutterstock.com/image-photo/portrait-happy-black-elementary-boy-600nw-2494341955.jpg" class="card-img-top" alt="Education impact">
+                        <div class="card-body">
+                            <h5 class="card-title">₹500 provides</h5>
+                            <p class="card-text">School supplies for a child for an entire semester, including textbooks, notebooks, and stationery.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card impact-card h-100">
+                        <img src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Water impact">
+                        <div class="card-body">
+                            <h5 class="card-title">₹1,000 provides</h5>
+                            <p class="card-text">Clean drinking water for a family of four for three months through our water purification projects.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card impact-card h-100">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Healthcare impact">
+                        <div class="card-body">
+                            <h5 class="card-title">₹5,000 provides</h5>
+                            <p class="card-text">Medical care for 10 children, including vaccinations and health check-ups in our mobile health clinics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2>Donor Testimonials</h2>
+                    <p class="lead">Hear from those who have already made a difference</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card" data-aos="fade-up">
+                                    <div class="testimonial-content">
+                                        <p>"I've been donating to Hope Foundation for three years now, and I'm amazed at how transparent they are about where the funds go. It's rewarding to see the direct impact of my contributions."</p>
+                                        <div class="testimonial-author">
+                                            <h5>Priya Sharma</h5>
+                                            <p>Monthly Donor since 2020</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card" data-aos="fade-up">
+                                    <div class="testimonial-content">
+                                        <p>"After visiting one of the schools built by Hope Foundation, I was moved by the dedication of the staff and the joy on the children's faces. My donations feel like they're truly making a difference."</p>
+                                        <div class="testimonial-author">
+                                            <h5>Rajesh Patel</h5>
+                                            <p>Major Donor</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card" data-aos="fade-up">
+                                    <div class="testimonial-content">
+                                        <p>"What I appreciate most about Hope Foundation is their focus on sustainable solutions rather than quick fixes. They're creating lasting change in communities, and I'm proud to support their work."</p>
+                                        <div class="testimonial-author">
+                                            <h5>Ananya Desai</h5>
+                                            <p>Corporate Partner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="h5"><i class="fas fa-hands-helping me-2"></i>Hope Foundation</h3>
+                    <p class="mt-3">Making a difference in the lives of those who need it most. Join us in our mission to create positive change around the world.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="h5">Quick Links</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html" class="text-decoration-none text-white">Home</a></li>
+                        <li><a href="aim.html" class="text-decoration-none text-white">Our Mission</a></li>
+                        <li><a href="payment.html" class="text-decoration-none text-white">Donate</a></li>
+                        <li><a href="login.html" class="text-decoration-none text-white">Login</a></li>
+                        <li><a href="register.html" class="text-decoration-none text-white">Register</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="h5">Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Charity Lane, Helping City, HC 12345</p>
+                        <p><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope me-2"></i> info@hopefoundation.org</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; 2023 Hope Foundation. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init();
+
+        // Initialize Stripe Elements
+        let stripe, elements, cardElement;
+        
+        console.log('Script loaded');
+        
+        // Wait for DOM to be fully loaded before initializing Stripe
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded');
+            
+            try {
+                // Check if Stripe is available
+                if (typeof Stripe === 'undefined') {
+                    console.error('Stripe is not defined. Make sure the Stripe.js library is loaded correctly.');
+                    return;
+                }
+                
+                // Initialize Stripe with the publishable key
+                stripe = Stripe('pk_test_51Ru7m0H8MsiexWQGpyBRXjZvSyc37AHbJtQzqY7MWrM5IMGIVR0FlPP7K6vyZ2MLqCB9Kk0I4kDtWZTB6Ic9pXEW00MBmtJ12t');
+                console.log('Stripe initialized');
+                
+                // Create Stripe Elements instance
+                elements = stripe.elements();
+                console.log('Stripe Elements created');
+                
+                // Check if card-element exists
+                const cardElementContainer = document.getElementById('card-element');
+                if (!cardElementContainer) {
+                    console.error('Card element container not found');
+                    return;
+                }
+                
+                // Create card Element and mount it
+                cardElement = elements.create('card');
+                cardElement.mount('#card-element');
+                console.log('Card element mounted');
+                
+                // Handle real-time validation errors from the card Element
+                cardElement.on('change', function(event) {
+                    console.log('Card element changed', event);
+                    const displayError = document.getElementById('card-errors');
+                    if (event.error) {
+                        displayError.textContent = event.error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+                
+                console.log('Stripe Elements fully initialized');
+            } catch (error) {
+                console.error('Error initializing Stripe:', error);
+            }
+        });
+
+        // Show/hide custom amount field based on selection
+        document.querySelectorAll('input[name="donationAmount"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const customAmountContainer = document.querySelector('.custom-amount-container');
+                if (this.value === 'custom') {
+                    customAmountContainer.classList.remove('d-none');
+                    document.getElementById('customAmount').setAttribute('required', 'required');
+                } else {
+                    customAmountContainer.classList.add('d-none');
+                    document.getElementById('customAmount').removeAttribute('required');
+                }
+            });
+        });
+
+        // Stripe Integration - Add event listener after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make sure the button exists before adding the event listener
+            const stripeButton = document.getElementById('stripe-button');
+            if (!stripeButton) {
+                console.error('Stripe button not found');
+                return;
+            }
+            
+            console.log('Adding event listener to Stripe button');
+            stripeButton.addEventListener('click', function(e) {
+             console.log('Stripe button clicked');
+             e.preventDefault();
+            
+            // Form validation
+            const form = document.getElementById('donationForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const cause = document.getElementById('donationCause').value;
+            
+            // Get selected amount
+            let amount = 0;
+            const selectedAmount = document.querySelector('input[name="donationAmount"]:checked');
+            if (selectedAmount.value === 'custom') {
+                amount = document.getElementById('customAmount').value;
+            } else {
+                amount = selectedAmount.value;
+            }
+            
+            if (!amount || amount <= 0) {
+                alert('Please enter a valid donation amount');
+                return;
+            }
+            
+            // Convert to cents for Stripe (multiply by 100)
+            const amountInCents = amount * 100;
+            
+            // Use the global Stripe instance instead of creating a new one
+            // This fixes the "IntegrationError: Please use the same instance of `Stripe`" error
+            
+            // Create a Stripe Checkout Session
+            // In a real implementation, this would be done on your server
+            // For demo purposes, we'll use Stripe Checkout directly
+            
+            // In a real implementation, you would create a checkout session on your server
+            // and then redirect to Stripe's hosted checkout page
+            // For demo purposes, we'll use a simplified approach
+            
+            // Create a payment method using the card Element
+            stripe.createPaymentMethod({
+                type: 'card',
+                card: cardElement,
+                billing_details: {
+                    name: `${firstName} ${lastName}`,
+                    email: email,
+                    phone: phone
+                }
+            })
+            .then(function(result) {
+                if (result.error) {
+                    // Show error to your customer
+                    alert(result.error.message);
+                } else {
+                    // In a real implementation, you would send the payment method ID to your server
+                    // and create a PaymentIntent to complete the payment
+                    console.log('Payment method created:', result.paymentMethod.id);
+                    
+                    // For demo purposes, we'll simulate a successful payment
+                    const mockPaymentId = result.paymentMethod.id;
+                    saveDonationData(mockPaymentId);
+                }
+            });
+            
+            // Note: In a production environment, you would need to:
+            // 1. Create a server endpoint to create a PaymentIntent
+            // 2. Confirm the payment on the client side
+            // 3. Handle successful payments via webhooks
+            // 
+            // For more information, see: https://stripe.com/docs/payments/accept-a-payment
+            });
+        });
+        
+        // Function to save donation data
+            function saveDonationData(paymentId) {
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+                const cause = document.getElementById('donationCause').value;
+                const frequency = document.getElementById('donationFrequency').value;
+                const message = document.getElementById('message').value;
+                
+                // Get selected amount
+                let amount = 0;
+                const selectedAmount = document.querySelector('input[name="donationAmount"]:checked');
+                if (selectedAmount.value === 'custom') {
+                    amount = document.getElementById('customAmount').value;
+                } else {
+                    amount = selectedAmount.value;
+                }
+                
+                // Create donation object
+                const donation = {
+                    id: paymentId,
+                    name: `${firstName} ${lastName}`,
+                    email: email,
+                    phone: phone,
+                    address: address,
+                    amount: amount,
+                    cause: cause,
+                    frequency: frequency,
+                    message: message,
+                    date: new Date().toISOString().split('T')[0]
+                };
+                
+                // Get existing donations from localStorage or initialize empty array
+                let donations = JSON.parse(localStorage.getItem('donations')) || [];
+                
+                // Add new donation
+                donations.push(donation);
+                
+                // Save to localStorage
+                localStorage.setItem('donations', JSON.stringify(donations));
+                
+                // Show success popup
+                showSuccessPopup(donation);
+                
+                // Redirect after a delay
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 5000);
+            }
+            
+            // Function to show success popup
+            function showSuccessPopup(donation) {
+                // Create success popup if it doesn't exist
+                if (!document.getElementById('successPopup')) {
+                    const popupHTML = `
+                    <div class="modal fade" id="successPopup" tabindex="-1" aria-labelledby="successPopupLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-success text-white">
+                                    <h5 class="modal-title" id="successPopupLabel"><i class="fas fa-check-circle me-2"></i>Payment Successful!</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center py-4">
+                                    <div class="mb-4">
+                                        <i class="fas fa-heart text-danger" style="font-size: 4rem;"></i>
+                                    </div>
+                                    <h4>Thank You for Your Donation!</h4>
+                                    <p class="lead mb-1">Amount: ₹<span id="donationAmount"></span></p>
+                                    <p class="mb-3">Cause: <span id="donationCause"></span></p>
+                                    <p class="text-muted">Your contribution will make a difference.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                    
+                    // Append popup to body
+                    document.body.insertAdjacentHTML('beforeend', popupHTML);
+                }
+                
+                // Set donation details in popup
+                document.getElementById('donationAmount').textContent = donation.amount;
+                document.getElementById('donationCause').textContent = donation.cause;
+                
+                // Show the popup
+                const successPopup = new bootstrap.Modal(document.getElementById('successPopup'));
+                successPopup.show();
+            }
+    </script>
+</body>
+</html>

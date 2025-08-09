@@ -1,0 +1,377 @@
+/* Payment Page Styles */
+
+/* Global Styles */
+:root {
+    --primary-color: #4B5632;
+    --primary-dark: #0b5ed7;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #2B3A1A	;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 0.5rem;
+}
+.nav-bar{
+    background-color: #6E7A4A;
+}
+.nav-bar a{
+    color: #F5F5DC;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-color);
+    overflow-x: hidden;
+}
+.btn-grad {background-image: linear-gradient(to right, #666600 0%, #999966  51%, #666600  100%)}
+
+         .btn-grad {
+
+            margin: auto;
+
+            padding: 15px 45px;
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            transition: 0.5s;
+
+            background-size: 200% auto;
+
+            color: white;            
+
+            border-radius: 10px;
+
+            display: block;
+
+            width: 50%;
+
+          }
+
+
+
+          .btn-grad:hover {
+
+            background-position: right center; /* change the direction of the change here */
+
+            color: #fff;
+
+            text-decoration: none;
+          }
+
+/* Hero Section */
+.payment-hero-section {
+    background: 
+    linear-gradient(
+        rgba(154, 255, 77, 0.15),  /* Soft Bright Lime overlay */
+        rgba(92, 133, 62, 0.15)    /* Soft Deep Olive Green overlay */
+    ),
+    url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;;
+height: 50vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Donation Card */
+.donation-card {
+    border: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.form-section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #A3B273;
+}
+
+/* Donation Amount Options */
+.donation-amount-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.amount-option {
+    margin: 0;
+}
+
+.amount-option .form-check-input {
+    display: none;
+}
+
+.amount-option .form-check-label {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.amount-option .form-check-input:checked + .form-check-label {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.amount-option .form-check-label:hover {
+    background-color: #e9ecef;
+}
+
+.amount-option .form-check-input:checked + .form-check-label:hover {
+    background-color: var(--primary-color);
+}
+
+/* Impact Cards */
+.impact-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.impact-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    color: rgba(13, 110, 253, 0.1);
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    line-height: 1;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author h5 {
+    margin-bottom: 0.25rem;
+    color: var(--primary-color);
+}
+
+.testimonial-author p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4B5632;
+    color: white;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .payment-hero-section {
+        height: 40vh;
+        text-align: center;
+    }
+    
+    .donation-amount-options {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .payment-hero-section {
+        height: 30vh;
+    }
+    
+    .amount-option .form-check-label {
+        padding: 0.5rem 1rem;
+    }
+}
+@media (max-width: 600px) {
+  .btn-grad {
+    width: 100%;          /* Make button full width on small screens */
+    padding: 12px 20px;   /* Smaller padding for mobile */
+    margin: auto;        /* Adjust margin for spacing */
+    font-size: 14px;      /* Slightly smaller text */
+  }
+  
+  .cause-content {
+    padding: 15px;        /* Add some padding inside cause-content */
+  }
+
+  .cause-content h3 {
+    font-size: 1.25rem;   /* Slightly smaller heading */
+  }
+
+  .cause-content p {
+    font-size: 0.9rem;    /* Smaller paragraph text */
+  }
+}
+/* Animation Styles */
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Button Hover Effects */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Input Focus Styles */
+.form-control:focus,
+.form-select:focus {
+   border-color: rgba(138, 154, 91, 0.5);      /* mossy green with 50% opacity */
+box-shadow: 0 8px 20px rgba(110, 122, 74, 0.6);       /* bright lime with 25% opacity */
+
+}
+
+
+/* Custom Razorpay Button Animation */
+#rzp-button {
+    transition: all 0.3s ease;
+    background-color:#6E7A4A;
+    color: #F5F5DC	;
+}
+
+#rzp-button:hover {
+    transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(110, 122, 74, 0.6); /* stronger, more opaque shadow on hover */
+
+}
+
+#rzp-button:active {
+    transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(110, 122, 74, 0.6); /* stronger, more opaque shadow on hover */
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+}
+
+.carousel-control-prev {
+    left: -20px;
+}
+
+.carousel-control-next {
+    right: -20px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .carousel-control-prev {
+        left: 10px;
+    }
+    
+    .carousel-control-next {
+        right: 10px;
+    }
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Hope Foundation</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="icon" href="./images/icon.svg">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg nav-bar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-hands-helping me-2"></i>Hope Foundation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aim.html">Our Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment.html">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Register Section -->
+    <section class="register-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="register-card card shadow" data-aos="fade-up" data-aos-duration="800">
+                        <div class="card-body p-4 p-md-5">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-user-plus register-icon user-icon"></i>
+                                <h2 class="card-title mb-0">Create an Account</h2>
+                                <p class="text-muted">Join Hope Foundation and be part of the change</p>
+                            </div>
+                            
+                            <form id="registerForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-envelope user-icon"></i></span>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-phone user-icon"></i></span>
+                                            <input type="number" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="password" class="form-label">Password</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock user-icon"></i></span>
+                                            <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+                                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                                <i class="fas fa-eye user-icon"></i>
+                                            </button>
+                                        </div>
+                                        <div class="password-strength mt-2 d-none" id="passwordStrength">
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <small class="text-muted">Password strength: <span id="strengthText">Too weak</span></small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock user-icon"></i></span>
+                                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">I want to register as:</label>
+                                        <div class="d-flex gap-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="userType" id="donor" value="donor" checked>
+                                                <label class="form-check-label" for="donor">Donor</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="userType" id="volunteer" value="volunteer">
+                                                <label class="form-check-label" for="volunteer">Volunteer</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 volunteer-fields d-none">
+                                        <label for="skills" class="form-label">Skills & Expertise</label>
+                                        <select class="form-select" id="skills" multiple>
+                                            <option value="teaching">Teaching</option>
+                                            <option value="medical">Medical</option>
+                                            <option value="technical">Technical/IT</option>
+                                            <option value="management">Management</option>
+                                            <option value="fundraising">Fundraising</option>
+                                            <option value="communication">Communication</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <small class="text-muted">Hold Ctrl (or Cmd) to select multiple options</small>
+                                    </div>
+                                    <div class="col-12 partner-fields d-none">
+                                        <label for="organizationName" class="form-label">Organization Name</label>
+                                        <input type="text" class="form-control" id="organizationName" placeholder="Enter your organization name">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                            <label class="form-check-label" for="termsCheck">
+                                                I agree to the <a href="#" class="user-icon">Terms of Service</a> and <a href="#" class="user-icon">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="newsletterCheck">
+                                            <label class="form-check-label" for="newsletterCheck">
+                                                Subscribe to our newsletter for updates on our causes and events
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-grad w-100">Create Account</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <div class="text-center mt-4">
+                                <p class="mb-0">Already have an account? <a href="login.html" class="user-icon text-decoration-none">Sign in</a></p>
+                            </div>
+                            
+                            <div class="social-register mt-4">
+                                <p class="text-center text-muted mb-3">Or register with</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <button class="btn user-icon social-btn">
+                                        <i class="fab fa-google"></i>
+                                    </button>
+                                    <button class="btn user-icon social-btn">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+                                    <button class="btn user-icon social-btn">
+                                        <i class="fab fa-twitter"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="h5"><i class="fas fa-hands-helping me-2"></i>Hope Foundation</h3>
+                    <p class="mt-3">Making a difference in the lives of those who need it most. Join us in our mission to create positive change around the world.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="h5">Quick Links</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html" class="text-decoration-none text-white">Home</a></li>
+                        <li><a href="aim.html" class="text-decoration-none text-white">Our Mission</a></li>
+                        <li><a href="payment.html" class="text-decoration-none text-white">Donate</a></li>
+                        <li><a href="login.html" class="text-decoration-none text-white">Login</a></li>
+                        <li><a href="register.html" class="text-decoration-none text-white">Register</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="h5">Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Charity Lane, Helping City, HC 12345</p>
+                        <p><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope me-2"></i> info@hopefoundation.org</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; 2023 Hope Foundation. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init();
+
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Show/hide fields based on user type selection
+        document.querySelectorAll('input[name="userType"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const volunteerFields = document.querySelector('.volunteer-fields');
+                const partnerFields = document.querySelector('.partner-fields');
+                
+                if (this.value === 'volunteer') {
+                    volunteerFields.classList.remove('d-none');
+                    partnerFields.classList.add('d-none');
+                } else if (this.value === 'partner') {
+                    partnerFields.classList.remove('d-none');
+                    volunteerFields.classList.add('d-none');
+                } else {
+                    volunteerFields.classList.add('d-none');
+                    partnerFields.classList.add('d-none');
+                }
+            });
+        });
+
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthDiv = document.getElementById('passwordStrength');
+            const progressBar = strengthDiv.querySelector('.progress-bar');
+            const strengthText = document.getElementById('strengthText');
+            
+            if (password.length === 0) {
+                strengthDiv.classList.add('d-none');
+                return;
+            }
+            
+            strengthDiv.classList.remove('d-none');
+            
+            // Calculate password strength
+            let strength = 0;
+            
+            // Length check
+            if (password.length >= 8) strength += 25;
+            
+            // Character variety checks
+            if (/[A-Z]/.test(password)) strength += 25; // Uppercase
+            if (/[a-z]/.test(password)) strength += 25; // Lowercase
+            if (/[0-9]/.test(password)) strength += 15; // Numbers
+            if (/[^A-Za-z0-9]/.test(password)) strength += 10; // Special characters
+            
+            // Update progress bar
+            progressBar.style.width = strength + '%';
+            progressBar.setAttribute('aria-valuenow', strength);
+            
+            // Update color based on strength
+            if (strength < 30) {
+                progressBar.className = 'progress-bar bg-danger';
+                strengthText.textContent = 'Too weak';
+            } else if (strength < 60) {
+                progressBar.className = 'progress-bar bg-warning';
+                strengthText.textContent = 'Medium';
+            } else if (strength < 80) {
+                progressBar.className = 'progress-bar bg-info';
+                strengthText.textContent = 'Good';
+            } else {
+                progressBar.className = 'progress-bar bg-success';
+                strengthText.textContent = 'Strong';
+            }
+        });
+
+        // Form validation for password confirmation
+        document.getElementById('confirmPassword').addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            
+            if (confirmPassword === '') {
+                this.setCustomValidity('');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                this.setCustomValidity('Passwords do not match');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        // Form submission
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const userType = document.querySelector('input[name="userType"]:checked').value;
+            const newsletter = document.getElementById('newsletterCheck').checked;
+            
+            // Additional fields based on user type
+            let additionalData = {};
+            
+            if (userType === 'volunteer') {
+                const skillsSelect = document.getElementById('skills');
+                const selectedSkills = Array.from(skillsSelect.selectedOptions).map(option => option.value);
+                additionalData.skills = selectedSkills;
+            } else if (userType === 'partner') {
+                additionalData.organizationName = document.getElementById('organizationName').value;
+            }
+            
+            // Create user object
+            const user = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phone: phone,
+                userType: userType,
+                newsletter: newsletter,
+                ...additionalData
+            };
+            
+            // Here you would typically send the data to your server for registration
+            // For demo purposes, we'll just simulate a successful registration
+            
+            // Store user in localStorage (for demo purposes only)
+            localStorage.setItem('registeredUser', JSON.stringify(user));
+            
+            // Show success message
+            alert('Registration successful! You can now log in with your credentials.');
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

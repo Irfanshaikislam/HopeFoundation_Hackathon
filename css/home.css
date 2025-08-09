@@ -1,0 +1,505 @@
+/* Home Page Styles */
+
+/* Global Styles */
+:root {
+    --primary-color: #4B5632;
+    --primary-dark: #0b5ed7;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 0.5rem;
+}
+
+.btn-grad {background-image: linear-gradient(to right, #666600 0%, #999966  51%, #666600  100%)}
+
+         .btn-grad {
+
+            margin: 10px;
+
+            padding: 15px 45px;
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            transition: 0.5s;
+
+            background-size: 200% auto;
+
+            color: white;            
+
+            border-radius: 10px;
+
+            display: block;
+
+            width: 50%;
+
+          }
+
+
+
+          .btn-grad:hover {
+
+            background-position: right center; /* change the direction of the change here */
+
+            color: #fff;
+
+            text-decoration: none;
+
+          }
+
+.nav-bar a{
+    color: white;
+}
+.nav-bar{
+    background-color: #8A9A5B;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-color);
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+   background: linear-gradient(
+    rgba(92, 133, 62, 0.6),    /* Dark Deep Olive Green */
+    rgba(54, 72, 34, 0.8)      /* Very Dark Mossy Green */
+), url('https://www.digiplexmovies.com/wp-content/uploads/2018/07/indianss5.jpg') no-repeat center center/cover;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Section Titles */
+.section-title {
+    position: relative;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.title-line {
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+/* Who We Are Section */
+.who-we-are-section {
+    padding: 5rem 0;
+}
+
+.who-we-are-image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.who-we-are-image img {
+    transition: var(--transition);
+}
+
+.who-we-are-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Impact Cards */
+.impact-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color:#6E7A4A;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Carousel Styles */
+.cause-slide {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.cause-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+}
+
+.cause-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    color: white;
+    z-index: 1;
+}
+
+/* Donor Cards */
+.donor-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    margin-left: auto; /* Push cards to the right */
+    background-color: white;
+    overflow: hidden;
+}
+
+.donor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.donor-card-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.25rem;
+}
+
+.donor-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.donor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.donor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.donor-details h5 {
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.donor-details p {
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.donation-amount {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.donation-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.donation-message {
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4B5632;
+    color: white;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+@media (max-width: 600px) {
+  .btn-grad {
+    width: 100%;          /* Make button full width on small screens */
+    padding: 12px 20px;   /* Smaller padding for mobile */
+    margin: 8px 0;        /* Adjust margin for spacing */
+    font-size: 14px;      /* Slightly smaller text */
+  }
+  
+  .cause-content {
+    padding: 15px;        /* Add some padding inside cause-content */
+  }
+
+  .cause-content h3 {
+    font-size: 1.25rem;   /* Slightly smaller heading */
+  }
+
+  .cause-content p {
+    font-size: 0.9rem;    /* Smaller paragraph text */
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-grad {
+    padding: 10px 15px;    /* Even smaller padding on very small devices */
+    font-size: 13px;       /* Smaller font size */
+  }
+
+  .cause-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .cause-content p {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .who-we-are-image {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .title-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section-title {
+        text-align: center;
+    }
+    
+    .cause-slide {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        height: 50vh;
+    }
+    
+    .cause-slide {
+        height: 250px;
+    }
+    
+    .cause-content {
+        padding: 1rem;
+    }
+    
+    .cause-content h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Animation Styles */
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Button Hover Effects */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-outline-light {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.btn-outline-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.btn-outline-light:hover::before {
+    left: 100%;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+}
+
+.carousel-control-prev {
+    left: -20px;
+}
+
+.carousel-control-next {
+    right: -20px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .carousel-control-prev {
+        left: 10px;
+    }
+    
+    .carousel-control-next {
+        right: 10px;
+    }
+}

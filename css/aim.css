@@ -1,0 +1,347 @@
+/* Aim Page Styles */
+
+/* Global Styles */
+:root {
+    --primary-color: #4B5632;
+    --primary-dark: #0b5ed7;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 0.5rem;
+}
+.nav-bar{
+    background-color: #8A9A5B;
+    color: white;
+}
+.nav-bar a{
+    color: white;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-color);
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.aim-hero-section {
+     background: linear-gradient(
+    rgba(92, 133, 62, 0.6),    /* Dark Deep Olive Green */
+    rgba(54, 72, 34, 0.8)      /* Very Dark Mossy Green */), url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Section Titles */
+.section-title {
+    position: relative;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.title-line {
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+/* Mission & Vision Sections */
+.mission-overlay, .vision-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+    border-radius: var(--border-radius);
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.position-relative:hover .mission-overlay,
+.position-relative:hover .vision-overlay {
+    background-color: rgba(138, 154, 91, 0.1);
+}
+
+/* Vision List */
+.vision-list {
+    list-style: none;
+    padding-left: 0;
+}
+.tick-icon{
+    color: #4B5632;
+}
+.vision-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.vision-list li i {
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+}
+
+/* Value Cards */
+.value-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(138, 154, 91, 0.2);
+;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: var(--transition);
+}
+
+.value-card:hover .value-icon {
+    background-color: rgba(138, 154, 91, 0.2);
+    transform: scale(1.1);
+}
+
+/* Goal Cards */
+.goal-card {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.goal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(138, 154, 91, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.goal-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.goal-progress {
+    flex-grow: 1;
+    margin: 0 1.5rem;
+}
+.btn-grad {background-image: linear-gradient(to right, #666600 0%, #999966  51%, #666600  100%)}
+
+         .btn-grad {
+
+            margin: 10px;
+
+            padding: 15px 45px;
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            transition: 0.5s;
+
+            background-size: 200% auto;
+
+            color: white;            
+
+            border-radius: 10px;
+
+            display: block;
+
+            width: 50%;
+
+          }
+
+
+
+          .btn-grad:hover {
+
+            background-position: right center; /* change the direction of the change here */
+
+            color: #fff;
+
+            text-decoration: none;
+
+          }
+.goal-content {
+    flex-grow: 2;
+}
+.progress-bar {
+  background-color: #8A9A5B !important; /* Your green color */
+  background-image: linear-gradient(
+    45deg,
+    rgba(138, 154, 91, 0.85) 25%,
+    rgba(138, 154, 91, 0.95) 50%,
+    rgba(106, 118, 70, 0.85) 75%
+  );
+}
+
+
+.goal-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.goal-content p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background: linear-gradient(
+  rgba(138, 154, 91, 0.7),  /* semi-transparent lighter green */
+  rgba(106, 118, 70, 1)     /* fully opaque slightly darker green */
+),url('https://www.ms.dk/sites/default/files/styles/full_width_1080px_/public/2021-10/gor_en_forskel_klimamarch.jpg?itok=cnuSJVx5') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Footer Styles */
+footer { 
+    background-color: #4B5632;
+    color: white;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .goal-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .goal-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .goal-progress {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .aim-hero-section {
+        height: 50vh;
+        text-align: center;
+    }
+    
+    .title-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .aim-hero-section {
+        height: 40vh;
+    }
+}
+
+/* Animation Styles */
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+@media (max-width: 600px) {
+  .btn-grad {
+    width: 100%;          /* Make button full width on small screens */
+    padding: 12px 20px;   /* Smaller padding for mobile */
+    margin: 8px 0;        /* Adjust margin for spacing */
+    font-size: 14px;      /* Slightly smaller text */
+  }
+  
+  .cause-content {
+    padding: 15px;        /* Add some padding inside cause-content */
+  }
+
+  .cause-content h3 {
+    font-size: 1.25rem;   /* Slightly smaller heading */
+  }
+
+  .cause-content p {
+    font-size: 0.9rem;    /* Smaller paragraph text */
+  }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
