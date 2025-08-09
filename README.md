@@ -87,7 +87,7 @@ Installation
    Clone the repository:
    
    
-   git clone https://github.com/
+   git clone [https://github.com/](https://github.com/Irfanshaikislam/HopeFoundation_Hackathon)
    yourusername/hope-foundation.git
    
 2. 2.
