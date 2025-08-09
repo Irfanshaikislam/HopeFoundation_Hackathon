@@ -83,6 +83,8 @@ Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - Internet connection (for CDN resources)
 Installation
+
+
 1.Clone the repository:
    
    
