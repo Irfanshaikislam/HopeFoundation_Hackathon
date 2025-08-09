@@ -27,34 +27,54 @@ Hope Foundation is a responsive web application for a non-profit organization de
   - Stripe JS
     
 ## 📂 Project Structure
-
+----------------------------------
 ├── index.html          # Home page
+
 ├── aim.html            # Mission and 
 vision page
+
 ├── login.html          # User login page
+
 ├── register.html       # User registration 
 page
+
 ├── payment.html        # Donation page
+
 ├── css/                # Stylesheet files
+
 │   ├── home.css
+
 │   ├── aim.css
+
 │   ├── login.css
+
 │   ├── register.css
+
 │   └── payment.css
+
 ├── js/                 # JavaScript files
+
 │   ├── main.js         # Common 
 functionality
+
 │   ├── login.js        # Login 
 functionality
+
 │   ├── register.js     # Registration 
 functionality
+
 │   ├── payment.js      # Donation 
 processing
+
 │   └── aim.js          # Mission page 
 functionality
+
 └── images/             # Image assets
+
     ├── logo.svg
+    
     ├── icon.svg
+    
     └── favicon.svg
 
 🚀 Getting Started
