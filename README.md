@@ -131,6 +131,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 -------------------------
 Your Name - shaikirfan4687@gmail.com
 
-Project Link: https://github.com/yourusername/hope-foundation
+Project Link: https://github.com/Irfanshaikislam/HopeFoundation_Hackathon
 
 ⭐ From Your Name:-SHAIK IRFAN
